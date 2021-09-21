@@ -60,4 +60,12 @@ trait ManagesCellSize
     {
         $this->columnWidths[] = [$start, $end, $width];
     }
+
+    /**
+     * Reset the column width by emptying the array
+     */
+    public function resetColumnsWidth()
+    {
+        $this->columnWidths = [];
+    }
 }

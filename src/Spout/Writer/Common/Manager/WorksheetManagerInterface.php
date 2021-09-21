@@ -35,6 +35,11 @@ interface WorksheetManagerInterface
     public function setColumnWidthForRange(float $width, int $start, int $end);
 
     /**
+     * Reset the column width by emptying the array
+     */
+    public function resetColumnsWidth();
+
+    /**
      * Adds a row to the worksheet.
      *
      * @param Worksheet $worksheet The worksheet to add the row to

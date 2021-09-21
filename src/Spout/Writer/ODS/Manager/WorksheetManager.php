@@ -300,4 +300,12 @@ class WorksheetManager implements WorksheetManagerInterface
     {
         $this->styleManager->setColumnWidthForRange($width, $start, $end);
     }
+
+    /**
+     * Reset the column width by emptying the array
+     */
+    public function resetColumnsWidth()
+    {
+        $this->styleManager->resetColumnsWidth();
+    }
 }

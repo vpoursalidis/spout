@@ -190,6 +190,15 @@ abstract class WriterMultiSheetsAbstract extends WriterAbstract
     }
 
     /**
+     * Reset the column width by emptying the array
+     */
+    public function resetColumnsWidth()
+    {
+        $this->throwIfWorkbookIsNotAvailable();
+        $this->workbookManager->resetColumnsWidth();
+    }
+
+    /**
      * Checks if the workbook has been created. Throws an exception if not created yet.
      *
      * @throws WriterNotOpenedException If the workbook is not created yet

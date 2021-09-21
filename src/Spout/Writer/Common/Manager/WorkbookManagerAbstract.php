@@ -323,6 +323,14 @@ abstract class WorkbookManagerAbstract implements WorkbookManagerInterface
     }
 
     /**
+     * Reset the column width by emptying the array
+     */
+    public function resetColumnsWidth()
+    {
+        $this->worksheetManager->resetColumnsWidth();
+    }
+
+    /**
      * Closes the workbook and all its associated sheets.
      * All the necessary files are written to disk and zipped together to create the final file.
      * All the temporary files are then deleted.
