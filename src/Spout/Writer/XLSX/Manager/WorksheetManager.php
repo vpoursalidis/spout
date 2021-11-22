@@ -271,10 +271,8 @@ EOD;
                 // Special case to add HYPERLINK Formula
                 $url = $this->stringsEscaper->escape($matches[1]);
                 $text = $this->stringsEscaper->escape(preg_replace('/\[URL:https?:\/\/.+\]/', '', $cell->getValue()));
-                $formula = sprintf('HYPERLINK("%s","%s")', $url, $text);
-                $cellXML = sprintf(
-                    '<c r="%s%s" t="str"><f>%s</f><v>%s</v></c>',
-                    $columnLetters, $rowIndexOneBased, $formula, $text);
+                $formula = sprintf('HYPERLINK("%s","%s")', $url, $this->stringsEscaper->escape($text));
+                $cellXML .= '><f>' . $formula . '</f></c>';
             } else {
                 $cellXML .= $this->getCellXMLFragmentForNonEmptyString($cell->getValue());
             }
